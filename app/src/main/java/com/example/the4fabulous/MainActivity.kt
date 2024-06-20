@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     var personDetailList = ArrayList<String>()
     var imageList = ArrayList<Int>()
 
+    lateinit var adapter: PeopleAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
 
-        recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         personNameList.add(getString(R.string.person_name1))
         personNameList.add(getString(R.string.person_name2))
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         imageList.add(R.drawable.draga_monika)
         imageList.add(R.drawable.kolega_rog)
 
-
+        adapter = PeopleAdapter(personNameList, personDetailList, imageList, this@MainActivity)
+        recyclerView.adapter = adapter
     }
 }
