@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import de.hdodenhof.circleimageview.CircleImageView
@@ -38,6 +39,11 @@ class PeopleAdapter(
         holder.textViewPersonName.text = peopleNameList.get(position)
         holder.textViewDetail.text = peopleDetailsList.get(position)
         holder.imageView.setImageResource(imageList.get(position))
+
+        holder.cardView.setOnClickListener {
+            Toast.makeText(context, "You selected: ${peopleNameList.get(position)}", Toast.LENGTH_SHORT).show()
+
+        }
 
     }
 

@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         imageList.add(R.drawable.ja)
         imageList.add(R.drawable.moj_kiki)
         imageList.add(R.drawable.draga_monika)
-        imageList.add(R.drawable.kolega_rog)
+        imageList.add(R.drawable.rog_nova)
 
         adapter = PeopleAdapter(personNameList, personDetailList, imageList, this@MainActivity)
         recyclerView.adapter = adapter
