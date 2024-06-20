@@ -5,12 +5,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView : RecyclerView
 
+    var personNameList = ArrayList<String>()
+    var personDetailList = ArrayList<String>()
+    var imageList = ArrayList<Int>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +27,24 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        recyclerView = findViewById(R.id.recyclerView)
+
+        recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+
+        personNameList.add(getString(R.string.person_name1))
+        personNameList.add(getString(R.string.person_name2))
+        personNameList.add(getString(R.string.person_name3))
+        personNameList.add(getString(R.string.person_name4))
+
+        personDetailList.add(getString(R.string.person_detail1))
+        personDetailList.add(getString(R.string.person_detail2))
+        personDetailList.add(getString(R.string.person_detail3))
+        personDetailList.add(getString(R.string.person_detail4))
+
+        imageList.add(R.drawable.ja)
+        imageList.add(R.drawable.moj_kiki)
+        imageList.add(R.drawable.draga_monika)
+        imageList.add(R.drawable.kolega_rog)
 
 
     }
